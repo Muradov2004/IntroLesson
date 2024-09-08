@@ -2,9 +2,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import TabStack from './TabStack';
 import AuthStack from './AuthStack';
+import {useMMKVString} from 'react-native-mmkv';
 
 const Navigation = () => {
-  const isAuthenticated = true;
+  const [isAuthenticated, setIsAuthenticated] = useMMKVString('token');
 
   const linking = {
     prefixes: ['introlesson://'],
